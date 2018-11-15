@@ -1,28 +1,85 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      hue: 50,
+      saturation: 50,
+      luminescence: 50
+    }
+  }
+  updateHue = event => {
+    this.setState({
+      hue: event.target.value
+    })
+  }
+  updateSaturation = event => {
+    this.setState({
+      saturation: event.target.value
+    })
+  }
+  updateLuminescence = event => {
+    this.setState({
+      luminescence: event.target.value
+    })
+  }
+
   render() {
+    const color = `hsl(${this.state.hue}, ${this.state.saturation}%, ${
+      this.state.luminescence
+    }%)`
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="body">
+        <h1>Color Picker</h1>
+        <section className="color-picker">
+          <div
+            style={{
+              backgroundColor: color
+            }}
+            className="color-swatch"
           >
-            Learn React
-          </a>
-        </header>
+            {' '}
+          </div>
+          <ul className="sliders">
+            <li>
+              <p>Hue</p>
+              <input
+                type="range"
+                min="0"
+                max="360"
+                value={this.state.hue}
+                onChange={this.updateHue}
+              />
+            </li>
+            <li>
+              <p>Saturation</p>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={this.state.saturation}
+                onChange={this.updateSaturation}
+              />
+            </li>
+            <li>
+              <p>Luminescence</p>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={this.state.luminescence}
+                onChange={this.updateLuminescence}
+              />
+            </li>
+          </ul>
+        </section>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

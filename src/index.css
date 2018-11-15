@@ -1,14 +1,85 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 2vw;
+  text-align: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.color-swatch {
+  width: 35vw;
+  height: 35vw;
+  border: 3px solid black;
+}
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: lightgray;
+}
+input {
+  width: 50vw;
+  border: 2 px solid black;
+  border-radius: 3px;
+  height: 40px;
+}
+ul {
+  list-style: none;
+}
+body {
+  border: 2px solid black;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+h1 {
+  background-color: lightgray;
+  margin: 0;
+  padding: 2vw 0;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-ms-track {
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  width: 75vw;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -9px;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px, blue, 0px 0px 1px blue;
+  background: black;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+  width: 75vw;
+}
+p {
+  margin: 0;
 }
